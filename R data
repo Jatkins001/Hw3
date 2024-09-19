@@ -1,0 +1,30 @@
+# Creating usual R environment
+
+#Group Members 
+#Jermaine Atkins & Karolina Mullokand 
+setwd('/users/jermaineatkins/Desktop/R/EconometricsFall24/ecob2000_lecture1')
+View(Household_Pulse_data)
+library(plotly)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(ggthemes)
+
+# Identifying variables with strongest relationship to vaccination status
+
+```
+distincted_data <- distinct(Household_Pulse_data, TBIRTH_YEAR, EEDUC, EST_ST, RECVDVACC, 
+                          ANYWORK)
+```
+#Creating graph using variables of employment and vaccination data.
+
+ggplot(distincted_data%>%
+       group_by(ANYWORK,RECVDVACC)%>%count(),
+       aes(x=RECVDVACC, y=n, fill=ANYWORK))+
+  geom_bar(stat = 'identity', color='blue')+
+theme_economist() + 
+  labs(title = 'Employment levels within last 7 days',
+       subtitle = '2019-2024' ,
+       x= 'Employment' ,
+       y= 'count',
+       fill= 'RECVDVACC')
