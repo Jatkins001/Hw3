@@ -1,1 +1,1 @@
-# Hw3
+A key Variable in the household data that is closely linked to vaccination status is employment levels(ANYWORK). During the pandemic, employers implemented policies that affected employment status based on proof of vaccination(RECVDVACC). Unsurprisingly, the data indicates that msot individuals employed during that period were vaccinated.# Hw3
